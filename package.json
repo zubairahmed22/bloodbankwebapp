@@ -4,10 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    
+    "build": "cd init && npm run build",
      "install-init": "cd init && npm install",
-     "build": "cd init && npm run build",
-     "heroku-postbuild": "cd init && npm start",
+     "heroku-postbuild": "npm run install-init && npm run build",
     "start": "nodemon app.js"
   },
   "author": "zubairahmed",

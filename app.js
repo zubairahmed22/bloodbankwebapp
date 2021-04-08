@@ -24,18 +24,22 @@ app.use(cookieParser());
 app.use(cors());
 
 
-if(process.env.NODE_ENV === "production"){
-   app.use(express.static("init/build")) ;
-   const path = require('path')
-   app.get("*",(req,res) =>{
-       res.sendFile(path.resolve(__dirname,"init","build","index.html"))
-   })
-}
+
 
 //My Routes
 app.use("/api",authRoutes)
 
 const port = process.env.PORT || 8000;
+
+
+if(process.env.NODE_ENV === "production"){
+    app.use(express.static("init/build")) ;
+    const path = require('path')
+    app.get("*",(req,res) =>{
+        res.sendFile(path.resolve(__dirname,"init","build","index.html"))
+    })
+ }
+
 app.listen(port,() =>{
     console.log(`Server is running at ${port}`)
 })
