@@ -4,9 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "build": "cd init && npm run build",
-     "install-init": "cd init && npm install",
-     "heroku-postbuild": "npm run install-init && npm run build",
+    
+     "heroku-postbuild": " NPM_CONFIG_PRODUCTION=false npm run install --prefix init && npm run build --prefix init",
     "start": "node app.js"
   },
   "author": "zubairahmed",
