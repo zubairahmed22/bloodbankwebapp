@@ -7,7 +7,7 @@
     "build": "cd init && npm run build",
      "install-init": "cd init && npm install",
      "heroku-postbuild": "npm run install-init && npm run build",
-    "start": "nodemon app.js"
+    "start": "node app.js"
   },
   "author": "zubairahmed",
   "license": "ISC",
